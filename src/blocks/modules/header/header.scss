@@ -1,0 +1,23 @@
+.header {
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 120px;
+  }
+
+  &__btn {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  &__btn-menu {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: none;
+  }
+}

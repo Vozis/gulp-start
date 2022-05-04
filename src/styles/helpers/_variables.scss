@@ -1,0 +1,44 @@
+// Grid breakpoints
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+
+// scss-docs-start grid-breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  s: 375px,
+  sm: 540px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+) !default;
+// scss-docs-end grid-breakpoints
+
+// Grid containers
+//
+// Define the maximum width of `.container` for different screen sizes.
+
+// scss-docs-start container-max-widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px,
+) !default;
+// scss-docs-end container-max-widths
+
+// Container padding
+
+/** @format */
+
+$title-color: #363838;
+$major-color: #5a5a5a;
+
+// $img-path: '../img';
+// $style-path: './src/blocks';
+%title-font {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}

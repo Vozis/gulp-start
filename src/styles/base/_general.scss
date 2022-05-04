@@ -1,0 +1,103 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  overflow-x: hidden;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-fluid {
+  max-width: 1920px;
+  padding: 0 25px;
+  margin: 0 auto;
+}
+
+body {
+  font-family: "Open Sans";
+  font-weight: 400;
+  line-height: 27px;
+  font-size: 16px;
+  color: $major-color;
+  min-width: 300px;
+}
+
+.hidden {
+  display: none;
+}
+
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+
+  button {
+    background-color: #000;
+    border: none;
+    border-radius: 50%;
+    height: 8px;
+    width: 8px;
+    padding: 0;
+    font-size: 0;
+  }
+
+  li.slick-active {
+    button {
+      background-color: #f1d152;
+    }
+  }
+}
+
+.info-email {
+  font-weight: 600;
+  color: $title-color;
+  padding-left: 30px;
+  display: inline-block;
+  margin-bottom: 22px;
+  position: relative;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background-image: url(../../../img/mail.svg);
+    left: 0;
+    top: 8px;
+    width: 16px;
+    height: 12px;
+  }
+}
+
+.textarea {
+  padding: 14px 17px;
+  min-height: 125px;
+}

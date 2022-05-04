@@ -1,0 +1,159 @@
+.article {
+  &__item {
+  }
+
+  &__text {
+    p {
+      margin-bottom: 40px;
+    }
+
+    blockquote {
+      font-weight: 300;
+      font-size: 24px;
+      line-height: 38px;
+      font-style: italic;
+      margin-bottom: 30px;
+      padding: 0 40px;
+    }
+  }
+
+  &__tags {
+    margin-bottom: 30px;
+  }
+
+  &__tags-title {
+    @extend %title-font;
+    color: $title-color;
+    font-size: 20px;
+    line-height: 31px;
+    margin-bottom: 15px;
+  }
+
+  &__tags-link {
+    margin-bottom: 10px;
+    margin-right: 23px;
+  }
+
+  &__links {
+    padding: 40px 0 32px;
+    border-top: 1px solid #dfdfdf;
+    border-bottom: 1px solid #dfdfdf;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 35px;
+  }
+
+  &__link {
+    width: 243px;
+    position: relative;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 28px;
+    color: #707070;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      width: 12px;
+      height: 23px;
+    }
+  }
+
+  &__link-prev {
+    padding-left: 44px;
+
+    &::before {
+      background-image: url(../../../img/arrow-prev-article.svg);
+      left: 0;
+    }
+  }
+
+  &__link-next {
+    padding-right: 44px;
+    text-align: right;
+
+    &::before {
+      background-image: url(../../../img/arrow-next-article.svg);
+      right: 0;
+    }
+  }
+
+  &__comments {
+    margin-bottom: 40px;
+  }
+
+  &__comments-title {
+    @extend %title-font;
+    color: $title-color;
+    font-size: 20px;
+    line-height: 31px;
+    margin-bottom: 15px;
+  }
+
+  &__comments-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 13px;
+  }
+
+  &__comments-avatar {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  &__comments-reply {
+    background-color: transparent;
+    border: none;
+    color: #707070;
+    font-size: 14px;
+    line-height: 28px;
+  }
+
+  &__comments-name {
+    @extend %title-font;
+    color: $title-color;
+    font-size: 16px;
+    line-height: 23px;
+  }
+  &__comments-date {
+    color: #a1a1a1;
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  &__form {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 13px;
+  }
+
+  &__form-title {
+    @extend %title-font;
+    color: $title-color;
+    font-size: 16px;
+    line-height: 23px;
+    margin-bottom: 25px;
+  }
+
+  &__form-area {
+    width: 100%;
+  }
+
+  &__form-input {
+    width: 48%;
+  }
+
+  &__form-label {
+    margin-bottom: 7px;
+    width: 100%;
+    font-size: 14px;
+    color: #a1a1a1;
+  }
+}

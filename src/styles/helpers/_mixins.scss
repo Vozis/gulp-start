@@ -1,0 +1,54 @@
+@mixin font($font_name, $file_name, $weight, $style) {
+  @font-face {
+    font-family: $font_name;
+    font-display: swap;
+    src: url("../fonts/#{$file_name}.woff") format("woff"),
+      url("../fonts/#{$file_name}.woff2") format("woff2");
+    font-weight: #{$weight};
+    font-style: #{$style};
+  }
+}
+
+// Container mixins
+
+@mixin make-container($gutter: $container-padding-x) {
+  width: 100%;
+  padding-right: var(--#{$variable-prefix}gutter-x, #{$gutter});
+  padding-left: var(--#{$variable-prefix}gutter-x, #{$gutter});
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// mixins популярных брекпоинтов
+@mixin xl {
+  @media screen and (max-width: 1200px) {
+    @content;
+  }
+}
+@mixin l {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+@mixin m {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin s {
+  @media screen and (max-width: 480px) {
+    @content;
+  }
+}
+
+@mixin xs {
+  @media screen and (max-width: 350px) {
+    @content;
+  }
+}
+
+@mixin xxs {
+  @media screen and (max-width: 320px) {
+    @content;
+  }
+}

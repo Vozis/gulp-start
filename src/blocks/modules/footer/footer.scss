@@ -1,0 +1,104 @@
+.footer {
+  &__content {
+    background: #dfdfdf;
+    color: $title-color;
+    padding: 60px 0 80px;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info {
+    width: 540px;
+  }
+
+  &__info-title {
+    color: $title-color;
+    @extend %title-font;
+    margin-bottom: 14px;
+    line-height: 23px;
+  }
+
+  &__info-text {
+    margin-bottom: 16px;
+    max-width: 475px;
+  }
+
+  &__form {
+    display: flex;
+  }
+
+  &__form-input {
+    margin-right: 9px;
+  }
+
+  &__social {
+    width: 125px;
+    margin-right: auto;
+    margin-left: 100px;
+  }
+
+  &__social-link {
+    padding-left: 16px + 12px;
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      top: 3px;
+    }
+
+    &--facebook::before {
+      background-image: url(../../../img/facebook.svg);
+    }
+    &--instagram::before {
+      background-image: url(../../../img/instagram.svg);
+      width: 14px;
+      height: 14px;
+      top: 4px;
+    }
+    &--pinterest::before {
+      background-image: url(../../../img/pinterest.svg);
+    }
+    &--whatsapp::before {
+      background-image: url(../../../img/whatsapp.svg);
+      width: 14px;
+      height: 14px;
+      top: 4px;
+    }
+    &--youtube::before {
+      background-image: url(../../../img/youtube.svg);
+      width: 18px;
+      height: 12px;
+      top: 5px;
+    }
+  }
+
+  &__social-item,
+  &__menu-item {
+    margin-bottom: 15px;
+  }
+
+  &__social-link,
+  &__menu-link {
+    font-weight: 600;
+    font-size: 14px;
+    color: #707070;
+  }
+
+  &__menu {
+    width: 125px;
+    margin-right: 60px;
+  }
+
+  &__copyright {
+    background-color: $title-color;
+    color: #a1a1a1;
+    text-align: center;
+    padding: 42px 0 41px;
+  }
+}

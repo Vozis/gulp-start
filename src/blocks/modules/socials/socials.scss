@@ -1,0 +1,12 @@
+.socials {
+  display: flex;
+  align-items: center;
+
+  &--contacts {
+    gap: 40px;
+  }
+
+  &--aside {
+    gap: 20px;
+  }
+}
