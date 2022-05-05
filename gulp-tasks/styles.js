@@ -28,15 +28,12 @@ gulp.task("styles", () => {
     .pipe(gulpif(!production, sourcemaps.init()))
     .pipe(
       plumber({
-        errorHandler: function (err) {
-          notify.onError({
-            title: "Ошибка в CSS",
-            message: "<%= error.message %>",
-          })(err);
-        },
+        errorHandler: notify.onError({
+          title: "Ошибка в CSS",
+          message: "<%= error.message %>",
+        }),
       })
     )
-
     .pipe(
       sass({
         outputStyle: "expanded",

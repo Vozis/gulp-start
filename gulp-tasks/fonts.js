@@ -19,12 +19,10 @@ gulp.task("otfToTtf", () => {
     .src(`${paths.srcFolder}/fonts/*.otf`)
     .pipe(
       plumber({
-        errorHandler: function (err) {
-          notify.onError({
-            title: "Ошибка в FONTS",
-            message: "<%= error.message %>",
-          })(err);
-        },
+        errorHandler: notify.onError({
+          title: "Ошибка в FONTS",
+          message: "<%= error.message %>",
+        }),
       })
     )
     .pipe(

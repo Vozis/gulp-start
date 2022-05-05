@@ -21,12 +21,10 @@ gulp.task("webp", () => {
       .src(paths.images.src)
       .pipe(
         plumber({
-          errorHandler: function (err) {
-            notify.onError({
-              title: "Ошибка в IMAGES",
-              message: "<%= error.message %>",
-            })(err);
-          },
+          errorHandler: notify.onError({
+            title: "Ошибка в WEBP",
+            message: "<%= error.message %>",
+          }),
         })
       )
       .pipe(newer(paths.images.dist))

@@ -24,12 +24,10 @@ gulp.task("scripts", () => {
     .src(paths.scripts.src)
     .pipe(
       plumber({
-        errorHandler: function (err) {
-          notify.onError({
-            title: "Ошибка в JS",
-            message: "<%= error.message %>",
-          })(err);
-        },
+        errorHandler: notify.onError({
+          title: "Ошибка в JS",
+          message: "<%= error.message %>",
+        }),
       })
     )
     .pipe(webpackStream(webpackConfig), webpack)

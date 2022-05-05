@@ -9,42 +9,49 @@ import browsersync from "browser-sync";
 import yargs from "yargs";
 import versionNumber from "gulp-version-number";
 import webpHtmlNosvg from "gulp-webp-html-nosvg";
+import notify from "gulp-notify";
+import plumber from "gulp-plumber";
 
 const argv = yargs.argv,
   production = !!argv.production;
 
 gulp.task("views", () => {
-  return (
-    gulp
-      .src(paths.views.src)
-      .pipe(
-        include({
-          prefix: "@@",
-          basepath: "@file",
+  return gulp
+    .src(paths.views.src)
+    .pipe(
+      plumber({
+        errorHandler: notify.onError({
+          title: "Ошибка в HTML",
+          message: "<%= error.message %>",
+        }),
+      })
+    )
+    .pipe(
+      include({
+        prefix: "@@",
+        basepath: "@file",
+      })
+    )
+    .pipe(webpHtmlNosvg())
+    .pipe(gulpif(production, replace("../../../img/", "img/")))
+    .pipe(gulpif(production, replace("../img/", "img/")))
+    .pipe(gulpif(production, replace(".js", ".min.js")))
+    .pipe(
+      gulpif(
+        production,
+        versionNumber({
+          value: "%DT%",
+          append: {
+            key: "_v",
+            cover: 0,
+            to: ["css", "js"],
+          },
+          output: {
+            file: "gulp-tasks/version.json",
+          },
         })
       )
-      .pipe(webpHtmlNosvg())
-      .pipe(gulpif(production, replace("../../../img/", "img/")))
-      .pipe(gulpif(production, replace("../img/", "img/")))
-      // .pipe(gulpif(production, replace(".css", ".min.css")))
-      .pipe(gulpif(production, replace(".js", ".min.js")))
-      .pipe(
-        gulpif(
-          production,
-          versionNumber({
-            value: "%DT%",
-            append: {
-              key: "_v",
-              cover: 0,
-              to: ["css", "js"],
-            },
-            output: {
-              file: "gulp-tasks/version.json",
-            },
-          })
-        )
-      )
-      .pipe(gulp.dest(paths.views.dist))
-      .pipe(browsersync.stream())
-  );
+    )
+    .pipe(gulp.dest(paths.views.dist))
+    .pipe(browsersync.stream());
 });
