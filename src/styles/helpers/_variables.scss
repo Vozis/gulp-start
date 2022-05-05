@@ -14,6 +14,11 @@ $grid-breakpoints: (
 
 // ==================================================
 
+$zindex-sticky: 1020 !default;
+$zindex-fixed: 1030 !default;
+
+// ==================================================
+
 // Container padding
 
 $containerWidth: 1280;
