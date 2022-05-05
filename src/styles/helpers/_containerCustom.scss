@@ -1,0 +1,30 @@
+// Переменные
+
+.container {
+  max-width: ($containerWidth + $containerPadding) + px;
+  margin: 0 auto;
+  padding: 0 $containerPadding + px;
+
+  @include media-breakpoint-down(xxl) {
+    max-width: 1320px;
+  }
+
+  @include media-breakpoint-down(xl) {
+    max-width: 1140px;
+  }
+  @include media-breakpoint-down(lg) {
+    max-width: 960px;
+  }
+  @include media-breakpoint-down(md) {
+    max-width: 720px;
+  }
+  @include media-breakpoint-down(sm) {
+    max-width: none;
+  }
+}
+
+.container-fluid {
+  max-width: 1920px;
+  padding: 0 $containerPadding + px;
+  margin: 0 auto;
+}
