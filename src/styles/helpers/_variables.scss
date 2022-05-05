@@ -1,9 +1,6 @@
 // Grid breakpoints
-//
-// Define the minimum dimensions at which your layout will change,
-// adapting to different screen sizes, for use in media queries.
+// для media-запросов
 
-// scss-docs-start grid-breakpoints
 $grid-breakpoints: (
   xs: 0,
   s: 375px,
@@ -14,6 +11,9 @@ $grid-breakpoints: (
   xxl: 1400px,
 ) !default;
 // scss-docs-end grid-breakpoints
+
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints, "$grid-breakpoints");
 
 // Grid containers
 //
@@ -31,14 +31,25 @@ $container-max-widths: (
 
 // Container padding
 
-/** @format */
+$containerWidth: 1280;
+$containerPadding: 15;
 
-$title-color: #363838;
-$major-color: #5a5a5a;
+// Colors
+
+$dark-color: #031e3e;
+$light-color: #398bff;
+
+$title-color: #001731;
+$text-color: #6a6a6a;
 
 // $img-path: '../img';
 // $style-path: './src/blocks';
+
+// Fonts
+
+$fontMain: "Gilroy", sans-serif;
+
 %title-font {
-  font-family: "Montserrat", sans-serif;
+  font-family: $fontMain;
   font-weight: 700;
 }
