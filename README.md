@@ -189,6 +189,7 @@ svg use {
 
 ### Сниппет для встаки img
 
+```json
 "add ignored img": {
 "prefix": "img",
 "body": [
@@ -196,3 +197,4 @@ svg use {
       "<img class=\"$1\" src=\"$2\" alt=\"$3\">"
     ]
 }
+```
