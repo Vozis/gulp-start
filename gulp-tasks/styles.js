@@ -16,6 +16,7 @@ import debug from "gulp-debug";
 import yargs from "yargs";
 import notify from "gulp-notify";
 import webpCss from "gulp-webpcss";
+import urlAdjuster from "gulp-css-url-adjuster";
 
 const sass = gulpsass(dartsass);
 const argv = yargs.argv,
@@ -41,8 +42,15 @@ gulp.task("styles", () => {
         outputStyle: "expanded",
       })
     )
+    .pipe(
+      gulpif(
+        production,
+        urlAdjuster({
+          replace: ["../../../img/", "../img/"],
+        })
+      )
+    )
     .pipe(groupmedia())
-
     .pipe(
       webpCss({
         webpCss: ".webp",
