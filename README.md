@@ -189,7 +189,7 @@ svg use {
 
 ### Сниппет для встаки img
 
-```json
+```javascript
 "add ignored img": {
 "prefix": "img",
 "body": [
