@@ -25,15 +25,15 @@ const argv = yargs.argv,
 gulp.task("styles", () => {
   return gulp
     .src(paths.styles.src)
-    .pipe(gulpif(!production, sourcemaps.init()))
     .pipe(
       plumber({
         errorHandler: notify.onError({
-          title: "Ошибка в CSS",
+          titile: "Ошибка в SCSS",
           message: "<%= error.message %>",
         }),
       })
     )
+    .pipe(gulpif(!production, sourcemaps.init()))
     .pipe(
       sass({
         outputStyle: "expanded",
@@ -47,14 +47,16 @@ gulp.task("styles", () => {
         })
       )
     )
-    .pipe(groupmedia())
+    .pipe(gulpif(production, groupmedia()))
     .pipe(
-      webpCss({
-        webpCss: ".webp",
-        noWebpCss: ".no-webp",
-      })
+      gulpif(
+        production,
+        webpCss({
+          webpCss: ".webp",
+          noWebpCss: ".no-webp",
+        })
+      )
     )
-
     .pipe(
       gulpif(
         production,
