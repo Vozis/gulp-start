@@ -59,6 +59,7 @@ gulp.task("ttfToWoff", () => {
     .pipe(gulp.dest(paths.fonts.dist))
     .pipe(gulp.src(`${paths.srcFolder}/fonts/*.ttf`))
     .pipe(ttf2woff2())
+    .pipe(gulp.src(`${paths.srcFolder}/fonts/*.{woff,woff2}`))
     .pipe(gulp.dest(paths.fonts.dist))
     .pipe(
       debug({
