@@ -1,12 +1,12 @@
 module.exports = {
   root: true,
   modules: {
-    'bem-tools': {
+    "bem-tools": {
       plugins: {
         create: {
-          techs: ['html', 'scss', 'js'],
+          techs: ["html", "scss"],
           levels: {
-            'src/blocks/modules': {
+            "src/blocks/modules": {
               default: true,
             },
           },

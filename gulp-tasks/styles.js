@@ -47,6 +47,14 @@ gulp.task("styles", () => {
         })
       )
     )
+    .pipe(
+      gulpif(
+        production,
+        urlAdjuster({
+          replace: ["../../fonts/webfonts/", "../fonts/webfonts/"],
+        })
+      )
+    )
     .pipe(gulpif(production, groupmedia()))
     .pipe(
       gulpif(

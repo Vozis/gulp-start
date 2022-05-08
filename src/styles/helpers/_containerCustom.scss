@@ -6,7 +6,7 @@
   padding: 0 $containerPadding + px;
 
   @include media-breakpoint-down(xxl) {
-    max-width: 1320px;
+    max-width: ($containerWidth + $containerPadding) + px;
   }
 
   @include media-breakpoint-down(xl) {
@@ -20,11 +20,12 @@
   }
   @include media-breakpoint-down(sm) {
     max-width: none;
+    pd: 0 10px;
   }
 }
 
 .container-fluid {
-  max-width: 1920px;
+  max-width: $maxWidth + $containerPadding + px;
   padding: 0 $containerPadding + px;
   margin: 0 auto;
 }

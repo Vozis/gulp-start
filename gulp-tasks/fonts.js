@@ -26,13 +26,11 @@ gulp.task("otfToTtf", () => {
       })
     )
     .pipe(
-      gulpif(
-        production,
-        fonter({
-          formats: ["ttf"],
-        })
-      )
+      fonter({
+        formats: ["ttf"],
+      })
     )
+
     .pipe(gulp.dest(paths.fonts.src))
     .pipe(
       debug({
@@ -46,25 +44,21 @@ gulp.task("ttfToWoff", () => {
     .src(`${paths.srcFolder}/fonts/*.ttf`, {})
     .pipe(
       plumber({
-        errorHandler: function (err) {
-          notify.onError({
-            title: "Ошибка в FONTS",
-            message: "<%= error.message %>",
-          })(err);
-        },
+        errorHandler: notify.onError({
+          title: "Ошибка в FONTS",
+          message: "<%= error.message %>",
+        }),
       })
     )
     .pipe(
-      gulpif(
-        production,
-        fonter({
-          formats: ["woff"],
-        })
-      )
+      fonter({
+        formats: ["woff"],
+      })
     )
+
     .pipe(gulp.dest(paths.fonts.dist))
     .pipe(gulp.src(`${paths.srcFolder}/fonts/*.ttf`))
-    .pipe(gulpif(production, ttf2woff2()))
+    .pipe(ttf2woff2())
     .pipe(gulp.dest(paths.fonts.dist))
     .pipe(
       debug({
@@ -135,6 +129,16 @@ gulp.task("fontsStyle", () => {
   function cb() {}
 });
 
+gulp.task("copyFonts", () => {
+  return gulp
+    .src(`${paths.srcFolder}/fonts/webfonts/*.*`, {})
+    .pipe(gulp.dest(`${paths.buildFolder}/fonts/webfonts/`))
+    .pipe(
+      debug({
+        title: "Fonts",
+      })
+    );
+});
 /*
 gulp.task("fonts", () => {
   return gulp

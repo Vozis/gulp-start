@@ -66,7 +66,7 @@ export { paths };
 
 export const development = gulp.series(
   "clean",
-  gulp.series("otfToTtf", "ttfToWoff", "fontsStyle"),
+  gulp.series("otfToTtf", "ttfToWoff", "fontsStyle", "copyFonts"),
   gulp.parallel([
     "views",
     "styles",
@@ -81,7 +81,7 @@ export const development = gulp.series(
 
 export const prod = gulp.series(
   "clean",
-  gulp.series("otfToTtf", "ttfToWoff", "fontsStyle"),
+  gulp.series("otfToTtf", "ttfToWoff", "fontsStyle", "copyFonts"),
   gulp.parallel([
     "views",
     "styles",

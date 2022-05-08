@@ -1,3 +1,35 @@
 <header class="header page__header">
-  <div class="container"></div>
+  <div class="header__inner container">
+    <div class="header__logo">
+      <a class="logo" href="#">
+        <i class="fa-solid fa-bridge"></i>
+      </a>
+    </div>
+    <div class="menu header__menu">
+      <div class="icon-menu menu__btn">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <nav class="menu__content">
+        <ul class="menu__list">
+          <li class="menu__list-item">
+            <a class="menu__list-link @@if(context.link==1){_active}" href="#"
+              >Works</a
+            >
+          </li>
+          <li class="menu__list-item">
+            <a class="menu__list-link @@if(context.link==2){_active}" href="#"
+              >Blog</a
+            >
+          </li>
+          <li class="menu__list-item">
+            <a class="menu__list-link @@if(context.link==3){_active}" href="#"
+              >Contact</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
 </header>
