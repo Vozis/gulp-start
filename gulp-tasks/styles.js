@@ -51,6 +51,14 @@ gulp.task("styles", () => {
       gulpif(
         production,
         urlAdjuster({
+          replace: ["../../img/", "../img/"],
+        })
+      )
+    )
+    .pipe(
+      gulpif(
+        production,
+        urlAdjuster({
           replace: ["../../fonts/webfonts/", "../fonts/webfonts/"],
         })
       )
