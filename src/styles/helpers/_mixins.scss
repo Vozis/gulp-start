@@ -137,7 +137,7 @@
 /// @site https://madebymike.com.au/writing/precise-control-responsive-typography/
 
 @mixin font-size(
-  $min-font-size: 12px,
+  $min-font-size: 12,
   $max-font-size: $fontSize,
   $lower-range: 420px,
   $upper-range: 900px

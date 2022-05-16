@@ -1,12 +1,12 @@
 // Переменные
 
 .container {
-  max-width: ($containerWidth + $containerPadding) + px;
+  max-width: ($containerWidth + 2 * $containerPadding) + px;
   margin: 0 auto;
   padding: 0 $containerPadding + px;
 
   @include media-breakpoint-down(xxl) {
-    max-width: ($containerWidth + $containerPadding) + px;
+    max-width: ($containerWidth + 2 * $containerPadding) + px;
   }
 
   @include media-breakpoint-down(xl) {
