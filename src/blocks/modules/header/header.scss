@@ -191,7 +191,7 @@
         bottom: 0;
       }
     }
-    &.active {
+    &._active {
       span {
         transform: scale(0);
         &:first-child {
