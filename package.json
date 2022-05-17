@@ -70,6 +70,7 @@
     "postcss": "^8.4.8",
     "postcss-scss": "^4.0.3",
     "require-dir": "^1.2.0",
+    "rfs": "^9.0.6",
     "sass": "^1.49.9",
     "stylelint": "^14.5.3",
     "stylelint-config-standard-scss": "^3.0.0",
