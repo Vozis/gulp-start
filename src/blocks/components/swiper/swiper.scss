@@ -1,0 +1,158 @@
+.image-slider {
+  padding: 30px 0px 70px 0px;
+  &__wrapper {
+  }
+
+  &__slide {
+  }
+
+  &__image {
+    text-align: center;
+  }
+
+  &__image img {
+    max-width: 100%;
+  }
+}
+
+.image-slider .swiper-button-next::after,
+.image-slider .swiper-button-prev::after {
+  color: red;
+}
+
+.image-slider .swiper-pagination {
+  bottom: 0;
+}
+
+.image-slider .swiper-pagination-bullet {
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  font-size: 14px;
+  background-color: blue;
+}
+
+.image-slider .swiper-pagination-fraction {
+  font-size: 16px;
+  color: blue;
+}
+
+.image-slider .swiper-pagination-progressbar {
+  background-color: orange;
+}
+
+// Скролл
+
+.image-slider .swiper-scrollbar {
+  cursor: pointer;
+  color: red;
+  background-color: #000;
+}
+
+// Автоширина
+
+.image-slider .swiper-slide {
+  width: auto;
+}
+
+// Мультиядность
+
+// .image-slider {
+//   height: 700px;
+// }
+
+// .image-slider .swiper-slide {
+//   height: calc((100% - 30px) / 2);
+//   overflow: hidden;
+// }
+
+// Вертикальный слайдер
+
+// .image-slider {
+//   padding: 0px 0 0px 0;
+//   height: 400px;
+// }
+
+// Эффект куб
+
+// .image-slider {
+//   width: 500px;
+// }
+
+// Миниатюры (preview)
+.image-mini-slider {
+  &__wrapper {
+  }
+
+  &__slide {
+    opacity: 0.2;
+    transition: opacity 0.3s ease 0s;
+  }
+
+  &__slide.swiper-slide-thumb-active {
+    opacity: 1;
+  }
+
+  &__image {
+    position: relative;
+    padding: 0px 0px 30% 0px;
+    cursor: pointer;
+  }
+
+  &__image img {
+    object-fit: cover;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+// Передача управление
+
+.text {
+  font-size: 25px;
+  line-height: 150%;
+  color: #fff;
+  margin: 50px 0px;
+  background-color: pink;
+  padding: 10;
+}
+
+.text-slider {
+  background-color: green;
+  &__wrapper {
+  }
+
+  &__slide {
+    font-size: 25px;
+    line-height: 150%;
+    color: #fff;
+    background-color: blue;
+  }
+
+  &__slide h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0px 0px 15px 0px;
+  }
+}
+
+.parallax-slider {
+  &__bg {
+    background: url(../../../img/01.jpg) no-repeat;
+    height: 300px;
+  }
+  &__slide {
+  }
+}
+
+.virtual-slider {
+  height: 300px;
+  color: #000;
+
+  &__text {
+    color: red;
+  }
+}

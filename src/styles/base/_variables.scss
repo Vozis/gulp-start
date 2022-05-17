@@ -21,21 +21,23 @@ $zindex-fixed: 1030 !default;
 
 // Container padding
 
-$containerWidth: 856;
-$containerPadding: 10;
-$maxWidth: 1030;
+$containerWidth: 1240;
+$containerPadding: 15;
+$maxWidth: 1440;
 
 // ============================================================================
 
 // Colors
 
 $primary-color: #001731;
-$secondary-color: #ff6464;
+$secondary-color: #e89f71;
 
-$title-color: #21243d;
-$text-color: #21243d;
+$title-color: #3a3a3a;
+$text-color: #898989;
 
-$button-color: #ff6464;
+$button-color: #e89f71;
+
+$link-color: #616161;
 
 // ============================================================================
 
@@ -46,8 +48,8 @@ $button-color: #ff6464;
 
 // Fonts
 
-$fontFamily: "Heebo", sans-serif;
-$fontsize: 16;
+$fontFamily: "Gilroy", sans-serif;
+$fontSize: 16;
 
 %title-font {
   font-family: $fontFamily;
