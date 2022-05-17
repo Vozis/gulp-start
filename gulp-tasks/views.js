@@ -34,6 +34,7 @@ gulp.task("views", () => {
     )
     .pipe(gulpif(production, webpHtmlNosvg()))
     .pipe(gulpif(production, replace("../../../img/", "img/")))
+    .pipe(gulpif(production, replace("../../img/", "img/")))
     .pipe(gulpif(production, replace("../img/", "img/")))
     .pipe(gulpif(production, replace(".js", ".min.js")))
     .pipe(
