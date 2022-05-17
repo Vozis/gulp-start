@@ -65,6 +65,7 @@
     "imagemin-pngquant": "^9.0.0",
     "imagemin-webp": "^6.0.0",
     "imagemin-zopfli": "^7.0.0",
+    "ismobilejs": "^1.1.1",
     "lint-staged": "^12.3.5",
     "postcss": "^8.4.8",
     "postcss-scss": "^4.0.3",
