@@ -4,22 +4,49 @@
   justify-content: center;
   text-align: center;
   line-height: calc(29 / 20 * 100%);
-  font-weight: 500;
-  font-size: 20px;
-  background-color: $button-color;
-  border-radius: 2px;
-  padding: 13px 20px;
   transition: all 0.3s ease 0s;
-  color: #fff;
-
-  @include media-breakpoint-up(lg) {
-    &:hover {
-      background-color: darken($button-color, 10%);
-    }
-  }
+  font-weight: 600;
+  line-height: 150%;
+  padding: 0px 15px;
+  min-height: 48px;
 
   &._fw {
     width: 100%;
+  }
+
+  &--color {
+    background-color: $button-color;
+    color: #fff;
+    @include media-breakpoint-up(lg) {
+      &:hover {
+        background-color: darken($button-color, 10%);
+      }
+    }
+  }
+
+  &--transparent {
+    background-color: transparent;
+    border: 1px solid $button-color;
+    color: $button-color;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $button-color;
+        color: #fff;
+      }
+    }
+  }
+
+  &--white {
+    color: $button-color;
+    background-color: #fff;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $button-color;
+        color: #fff;
+      }
+    }
   }
 }
 

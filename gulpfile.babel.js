@@ -56,6 +56,11 @@ const requireDir = require("require-dir"),
       src: `${srcFolder}/.htaccess`,
       dist: `${buildFolder}/`,
     },
+    files: {
+      src: `${srcFolder}/files/**/*.*`,
+      dist: `${buildFolder}/files/`,
+      watch: `${srcFolder}/files/**/*`,
+    },
     buildFolder: buildFolder,
     srcFolder: srcFolder,
   };
@@ -68,6 +73,7 @@ export const development = gulp.series(
   "clean",
   gulp.series("otfToTtf", "ttfToWoff", "fontsStyle", "copyFonts"),
   gulp.parallel([
+    "files",
     "views",
     "styles",
     "scripts",
@@ -83,6 +89,7 @@ export const prod = gulp.series(
   "clean",
   gulp.series("otfToTtf", "ttfToWoff", "fontsStyle", "copyFonts"),
   gulp.parallel([
+    "files",
     "views",
     "styles",
     "scripts",

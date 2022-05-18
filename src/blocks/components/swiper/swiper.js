@@ -1,6 +1,134 @@
 // import Swiper bundle with all modules installed
 import Swiper from "swiper/bundle";
 
+let sliders = document.querySelectorAll("._swiper");
+if (sliders) {
+  for (let index = 0; index < sliders.length; index++) {
+    let slider = sliders[index];
+    if (!slider.classList.contains("swiper-bild")) {
+      let slider_items = slider.children;
+      if (slider_items) {
+        for (let index = 0; index < slider_items.length; index++) {
+          let el = slider_items[index];
+          el.classList.add("swiper-slide");
+        }
+      }
+      let slider_content = slider.innerHTML;
+      let slider_wrapper = document.createElement("div");
+      slider_wrapper.classList.add("swiper-wrapper");
+      slider_wrapper.innerHTML = slider_content;
+      slider.innerHTML = "";
+      slider.appendChild(slider_wrapper);
+      slider.classList.add("swiper-bild");
+
+      if (slider.classList.contains("_swiper_scroll")) {
+        let sliderScroll = document.createElement("div");
+        sliderScroll.classList.add("swiper-scrollbar");
+        slider.appendChild(sliderScroll);
+      }
+    }
+
+    if (slider.classList.contains("_gallery")) {
+      // slider.data('lightGallery').destroy(true);
+    }
+  }
+  sliders_bild_callback();
+}
+
+let sliderScrollItems = document.querySelectorAll("._swiper_scroll");
+if (sliderScrollItems.length > 0) {
+  for (let index = 0; index < sliderScrollItems.length; index++) {
+    const sliderScrollItem = sliderScrollItems[index];
+    const sliderScrollBar = sliderScrollItem.querySelector(".swiper-scrollbar");
+    const sliderScroll = new Swiper(sliderScrollItem, {
+      observer: true,
+      observeParents: true,
+      direction: "vertiical",
+      slidesPerView: "auto",
+      freeMode: true,
+      scrollbar: {
+        el: sliderScrollBar,
+        draggable: true,
+        snapOnRelease: false,
+      },
+      mousewheel: {
+        releaseOnEdge: true,
+      },
+    });
+    sliderScroll.scrollbar.updateSize();
+  }
+}
+
+function sliders_bild_callback(params) {}
+
+// ========================================================================
+
+if (document.querySelector(".slider-main__body")) {
+  new Swiper(".slider-main__body", {
+    observer: true,
+    observeParents: true,
+    slidesPerView: 1,
+    spaceBetween: 32,
+    watchOverflow: true,
+    speed: 800,
+    loop: true,
+    loopAdditionalSlides: 5,
+    preloadImages: false,
+    parallax: true,
+    // Dots
+    pagination: {
+      el: ".controls-slider-main__dots",
+      clickable: true,
+    },
+    // Arrows
+    navigation: {
+      nextEl: ".slider-main .slider-arrow--next",
+      prevEl: ".slider-main .slider-arrow--prev",
+    },
+    mousewheel: {
+      // Класс объекта, на котором
+      // бyдет срабатывать прокрутка мышью
+      eventsTarget: ".slider-main__body",
+    },
+  });
+}
+
+// ========================================================================
+/*
+new Swiper(".slider-main__body", {
+  observer: true,
+  observeParents: true,
+  slidesPerView: 1,
+  spaceBetween: 32,
+  watchOverflow: true,
+  speed: 800,
+  loop: true,
+  loopAdditionalSlides: 5,
+  preloadImages: false,
+  parallax: true,
+  // Буллеты
+  pagination: {
+    el: ".controls-slider-main__dots",
+    clickable: true,
+  },
+  // Arrows
+  navigation: {
+    nextEl: ".slider-main .slider-arrow--next",
+    prevEl: ".slider-main .slider-arrow--prev",
+  },
+  // Управление колесом мыши
+  mousewheel: {
+    // Класс объекта, на котором
+    // бyдет срабатывать прокрутка мышью
+    eventsTarget: ".slider-main__body",
+  },
+});
+
+*/
+
+// =========================================================================
+
+/*
 const imageSlider = new Swiper(".image-slider", {
   // стрелки
   navigation: {
@@ -21,18 +149,16 @@ const imageSlider = new Swiper(".image-slider", {
       return `<span class="${className}">${index + 1}</span>`;
     },
 
-    /*
     // Фракция - текущая страница слайдера
     type: "fraction",
     // Кастомный вывод фракции
     renderFraction: function (currentClass, totalClass) {
       return ` Фото <span class="${currentClass}"></span> из <span class="${totalClass}"></span>`;
     },
-*/
 
-    // Прогрессбар
-    // type: "progressbar",
-  },
+  //   // Прогрессбар
+  //   // type: "progressbar",
+  // },
 
   // Скролл
   // scrollBar: {
@@ -77,7 +203,7 @@ const imageSlider = new Swiper(".image-slider", {
     // Чувствительность колеса мыши
     sensitivity: 1,
     // Класс объекта, на котором
-    // бкдет срабатывать прокрутка мышью
+    // бyдет срабатывать прокрутка мышью
     eventsTarget: ".image-slider",
   },
 
@@ -116,7 +242,7 @@ const imageSlider = new Swiper(".image-slider", {
   freeMode: false,
 
   // Автопрокрутка
-  /* 
+  
   autoplay: {
     // Пауза между слайдами
     delay: 2000,
@@ -125,7 +251,7 @@ const imageSlider = new Swiper(".image-slider", {
     // Включить после ручного переключения
     disableOnInteraction: false,
   },
-  */
+
 
   // Скорость переключения слайдов
   speed: 500,
@@ -185,12 +311,12 @@ const imageSlider = new Swiper(".image-slider", {
   },
 
   // Оптимизация времени загрузки сайта
-  /*
+
    1. в HTML для картинок class="swiper-lazy"\
    2. src заменить на data-src 
    3. в src добавить картинку 1х1 
    4. в обертке картинки добавить div.swiper-lazy-preloader
-   */
+  
 
   // Отключить предзагрузку картинок
   preloadImages: false,
@@ -211,9 +337,9 @@ const imageSlider = new Swiper(".image-slider", {
   watchSlidesVisibility: true,
 
   // Увеличение картинки
-  /*
+
   1. Для обертки картинки добавит class="swiper-zoom-container"
-  */
+
   zoom: {
     // max увеличение
     maxRatio: 5,
@@ -314,3 +440,5 @@ sliderblock.addEventListener("mouseover", function (e) {
 sliderblock.addEventListener("mouseout", function () {
   imageSlider.autoplay.stop();
 });
+
+*/
