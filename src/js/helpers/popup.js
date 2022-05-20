@@ -12,7 +12,7 @@ import {
   bodyLockToggle,
   FLS,
 } from "../files/functions.js";
-import { modulesList } from "./modulesList.js";
+import { modulesList } from "../files//modulesList";
 
 // Класс Popup
 class Popup {

@@ -1,7 +1,7 @@
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, FLS } from "./functions.js";
 // Подключение списка активных модулей
-import { modulesList } from "../helpers/modulesList.js";
+import { modulesList } from "./modulesList";
 
 // Подключение из node_modules
 import tippy from "tippy.js";

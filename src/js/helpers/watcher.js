@@ -1,6 +1,6 @@
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, uniqArray, FLS } from "../files/functions.js";
-import { modulesList } from "./modulesList.js";
+import { modulesList } from "../files//modulesList";
 
 // Наблюдатель объектов [всевидещее око]
 // data-watch - можно писать значение для применения кастомного кода

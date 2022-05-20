@@ -6,7 +6,7 @@ import {
   _slideToggle,
   FLS,
 } from "../files/functions.js";
-import { modulesList } from "./modulesList.js";
+import { modulesList } from "../files//modulesList";
 import { formValidate } from "../helpers/forms/forms";
 
 // Подключение файла стилей

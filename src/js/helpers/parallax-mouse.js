@@ -4,7 +4,7 @@
 
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, FLS } from "../files/functions.js";
-import { modulesList } from "./modulesList.js";
+import { modulesList } from "../files//modulesList";
 
 /*
 Предмету, который будет двигаться за мышью указать атрибут data-prlx-mouse.

@@ -1,6 +1,6 @@
 // Подключение функционала "Чертогов Фрилансера"
 // Подключение списка активных модулей
-import { modulesList } from "../modulesList.js";
+import { modulesList } from "../../files/modulesList.js";
 // Вспомогательные функции
 import {
   isMobile,

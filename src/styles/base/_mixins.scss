@@ -166,7 +166,7 @@
   $property,
   $startSize,
   $minSize,
-  $widthFrom: $containerWidth,
+  $widthFrom: $maxWidthContainer,
   $widthTo: $minWidth,
   $keepSize: 0
 ) {
@@ -180,7 +180,7 @@
   // Для calc();
   $addSize: math.div($startSize - $minSize, 16);
 
-  @if ($widthFrom == $containerWidth and $maxWidthContainer == 0) {
+  @if ($widthFrom == $maxWidthContainer and $containerWidth == 0) {
     $widthFrom: $maxWidth;
   }
 
@@ -226,7 +226,7 @@
 
   // Устанавливаем значения по умолчанию
   @if $widthFrom !=
-    $containerWidth and
+    $maxWidthContainer and
     $widthFrom !=
     $maxWidth and
     $keepSize !=

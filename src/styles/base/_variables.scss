@@ -3,7 +3,7 @@
 
 $grid-breakpoints: (
   xs: 0,
-  s: 375px,
+  s: 480px,
   sm: 540px,
   md: 768px,
   lg: 992px,
@@ -25,6 +25,8 @@ $containerWidth: 1240;
 $containerPadding: 15;
 $maxWidth: 1440;
 $minWidth: 320;
+
+$maxWidthContainer: $containerWidth + 2 * $containerPadding;
 
 // ============================================================================
 

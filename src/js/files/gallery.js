@@ -7,7 +7,7 @@
 // Подключение функционала "Чертогов Фрилансера"
 import { isMobile, FLS } from "./functions.js";
 // Подключение списка активных модулей
-import { modulesList } from "../helpers/modulesList";
+import { modulesList } from "./modulesList";
 
 // Подключение базового набора функционала
 import lightGallery from "lightgallery";
@@ -15,7 +15,7 @@ import lightGallery from "lightgallery";
 // Плагины
 // lgZoom, lgAutoplay, lgComment, lgFullscreen, lgHash, lgPager, lgRotate, lgShare, lgThumbnail, lgVideo, lgMediumZoom
 // import lgThumbnail from 'lightgallery/plugins/thumbnail/lg-thumbnail.min.js'
-//import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.min.js'
+// import lgZoom from 'lightgallery/plugins/zoom/lg-zoom.min.js'
 
 // Запуск
 const galleries = document.querySelectorAll("[data-gallery]");
@@ -32,5 +32,5 @@ if (galleries.length) {
     });
   });
   // Добавляем в объект модулей
-  flsModules.gallery = galleyItems;
+  modulesList.gallery = galleyItems;
 }
