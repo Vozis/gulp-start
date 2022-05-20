@@ -7,4 +7,4 @@ import { modulesList } from "../helpers/modulesList.js";
 import tippy from "tippy.js";
 
 // Запускаем и добавляем в объект модулей
-flsModules.tippy = tippy("[data-tippy-content]", {});
+modulesList.tippy = tippy("[data-tippy-content]", {});

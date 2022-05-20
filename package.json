@@ -81,6 +81,7 @@
     "stylelint-order": "^5.0.0",
     "stylelint-selector-bem-pattern": "^2.1.1",
     "swiper": "^8.1.5",
+    "tippy.js": "^6.3.7",
     "url": "^0.11.0",
     "util": "^0.12.4",
     "vanilla-lazyload": "latest",
