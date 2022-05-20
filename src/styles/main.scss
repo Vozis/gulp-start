@@ -1,8 +1,7 @@
-// Переменные, миксины, функции
+// Переменные, миксины, вспомогательные
 @import "base/variables";
-@import "helpers/mixins";
-@import "helpers/functions";
-@import "helpers/helpers";
+@import "base/mixins";
+@import "base/helpers";
 
 // ============================================================================
 
@@ -14,7 +13,8 @@
 // Основное
 @import "base/fonts";
 @import "base/general";
-@import "base/reset";
+@import "base/common";
+@import "helpers/reset";
 
 // ============================================================================
 
@@ -28,14 +28,9 @@
 
 // ============================================================================
 
-// media - запросы
-@import "media/media";
-
-// ============================================================================
-
 // Тип контейнера
-//@import "helpers/containersBootstrap";
-@import "helpers/containerCustom";
+@import "helpers/containersBootstrap";
+// @import "helpers/containerCustom";
 
 // ============================================================================
 
