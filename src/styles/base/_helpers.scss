@@ -30,7 +30,7 @@
 // Стили для отзывчивых картинок (IBG)
 // Сниппет (HTML): ibg (div c картинкой и классами)
 // Сниппет (HTML): ibga (a c картинкой и классами)
-[class*="_ibg"] {
+[class*="-ibg"] {
   position: relative;
   img {
     position: absolute;
@@ -41,7 +41,7 @@
     object-fit: cover;
   }
 }
-[class*="_ibg--contain"] {
+[class*="-ibg--contain"] {
   img {
     object-fit: contain;
   }

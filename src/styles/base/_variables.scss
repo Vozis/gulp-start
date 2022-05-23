@@ -28,6 +28,11 @@ $minWidth: 320;
 
 $maxWidthContainer: $containerWidth + 2 * $containerPadding;
 
+// Тип адаптива:
+// 1 = отзывчивость (у контейнера нет брейкпоинтов),
+// 2 = по брейк-поинтам (контейнер меняет свою ширину по брейк-поинтам)
+$responsiveType: 1;
+
 // ============================================================================
 
 // Colors
@@ -52,7 +57,7 @@ $link-color: #616161;
 // Fonts
 
 $fontFamily: "Gilroy", sans-serif;
-$fontSize: 16;
+$fontSize: rem(16);
 
 %title-font {
   font-family: $fontFamily;
